@@ -57,7 +57,7 @@ public class Controller implements Initializable {
     @FXML
     private ComboBox<String> boracke;
 
-    public boolean ImePogresno() {
+    public boolean imePogresno() {
         if (imeTextfield.getText().isEmpty() || imeTextfield.getText().length() > 20) {
             imeTextfield.setStyle("-fx-background-color: red");
             return false;
@@ -119,7 +119,7 @@ public class Controller implements Initializable {
     }
 
     public void prijavaGreska() throws Exception {
-        if (!ImePogresno() || !prezimePogresno() || !indeksIspravnost() || !jmbgIspravnost() || !datumIspravnost()) {
+        if (!imePogresno() || !prezimePogresno() || !indeksIspravnost() || !jmbgIspravnost() || !datumIspravnost()) {
             try {
                 PronadjenaGreska.prikaziGresku("Greška", "Greška");
             }

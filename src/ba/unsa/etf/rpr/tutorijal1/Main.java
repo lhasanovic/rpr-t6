@@ -1,11 +1,11 @@
 package ba.unsa.etf.rpr.tutorijal1;
 
-import javafx.scene.Parent;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class Main extends Application {
 
@@ -13,8 +13,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("UnosStudenta.fxml"));
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Prijava");
         primaryStage.setScene(scene);
+        primaryStage.setTitle("Unos studenta");
         primaryStage.show();
     }
 
