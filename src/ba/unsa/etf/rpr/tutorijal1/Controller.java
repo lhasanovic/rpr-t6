@@ -16,7 +16,7 @@ public class Controller implements Initializable {
     private static boolean ispravnost = false;
 
     @FXML
-    private TextField imeTextfield;
+    public TextField imeTextfield;
 
     @FXML
     private TextField prezimeTextfield;
@@ -67,6 +67,7 @@ public class Controller implements Initializable {
             return true;
         }
     }
+
 
     public boolean prezimePogresno() {
         if (prezimeTextfield.getText().isEmpty() || prezimeTextfield.getText().length() > 20) {
@@ -168,3 +169,17 @@ public class Controller implements Initializable {
         boracke.setItems(nesto);
     }
 }
+
+@FXML
+imeTextfield.textProperty().addListener(new ChangeListener<String>() {
+@Override
+public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+        if (validnoImePrezime(n)) {
+        imeTextfield.getStyleClass().removeAll("poljeNijeIspravno");
+        imeTextfield.getStyleClass().add("poljeIspravno");
+        } else {
+        imeTextfield.getStyleClass().removeAll("poljeIspravno");
+        imeTextfield.getStyleClass().add("poljeNijeIspravno");
+        }
+        }
+        });
