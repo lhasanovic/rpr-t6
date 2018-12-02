@@ -4,7 +4,9 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -12,139 +14,150 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.tutorijal1.Controller">
+    <content>
+        <GridPane gridLinesVisible="true" hgap="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="600.0" vgap="2.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="600.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="200.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="200.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="200.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="250.0" prefHeight="244.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="106.0" prefHeight="156.0" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                    <children>
+                        <Label layoutX="41.0" layoutY="14.0" text="Osnovni podaci">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="41.0" layoutY="46.0" text="Ime">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="40.0" layoutY="83.0" text="Prezime">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="40.0" layoutY="120.0" text="Broj indeksa">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="imeTextfield" layoutX="179.0" layoutY="46.0" onAction="#imeIspravnost" onKeyReleased="#imeIspravnost" onKeyTyped="#imeIspravnost" promptText="Ime" />
+                        <TextField fx:id="prezimeTextfield" layoutX="179.0" layoutY="83.0" onAction="#prezimeIspravnost" onKeyTyped="#prezimeIspravnost" promptText="Prezime" />
+                        <TextField fx:id="indeksTextfield" layoutX="179.0" layoutY="116.0" onInputMethodTextChanged="#indeksIspravnost" onKeyTyped="#indeksIspravnost" promptText="Broj indeksa" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                    <children>
+                        <Label layoutX="42.0" layoutY="14.0" text="Detaljni lični podaci">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="42.0" layoutY="90.0" text="JMBG">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="44.0" layoutY="51.0" text="Datum rođenja">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="43.0" layoutY="132.0" text="Mjesto rođenja">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
 
-<GridPane gridLinesVisible="true" hgap="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="600.0" vgap="2.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.Controller">
-    <columnConstraints>
-        <ColumnConstraints hgrow="ALWAYS" minWidth="600.0" prefWidth="100.0" />
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="200.0" prefHeight="30.0" vgrow="ALWAYS" />
-        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="200.0" prefHeight="30.0" vgrow="ALWAYS" />
-        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="200.0" prefHeight="30.0" vgrow="ALWAYS" />
-        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="250.0" prefHeight="244.0" vgrow="ALWAYS" />
-        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="106.0" prefHeight="156.0" vgrow="ALWAYS" />
-    </rowConstraints>
-    <children>
-        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
-            <children>
-                <Label layoutX="41.0" layoutY="14.0" text="Osnovni podaci">
-                    <font>
-                        <Font name="System Bold" size="18.0" />
-                    </font>
-                </Label>
-                <Label layoutX="41.0" layoutY="46.0" text="Ime">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label layoutX="40.0" layoutY="83.0" text="Prezime">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label layoutX="40.0" layoutY="120.0" text="Broj indeksa">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <TextField fx:id="imeTextfield" layoutX="179.0" layoutY="46.0" onKeyReleased="#imePogresno" onKeyTyped="#imePogresno" promptText="Ime" />
-                <TextField fx:id="prezimeTextfield" layoutX="179.0" layoutY="83.0" onKeyTyped="#prezimePogresno" promptText="Prezime" />
-                <TextField fx:id="indeksTextfield" layoutX="179.0" layoutY="120.0" onKeyTyped="#indeksIspravnost" promptText="Broj indeksa" />
-            </children></AnchorPane>
-        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
-            <children>
-                <Label layoutX="42.0" layoutY="14.0" text="Detaljni lični podaci">
-                    <font>
-                        <Font name="System Bold" size="18.0" />
-                    </font>
-                </Label>
-                <Label layoutX="42.0" layoutY="50.0" text="JMBG">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label layoutX="43.0" layoutY="88.0" text="Datum rođenja">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label layoutX="43.0" layoutY="132.0" text="Mjesto rođenja">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <TextField fx:id="jmbgTextfield" layoutX="183.0" layoutY="50.0" onKeyTyped="#jmbgIspravnost" promptText="JMBG" />
-                <DatePicker fx:id="datum" layoutX="183.0" layoutY="88.0" onInputMethodTextChanged="#datumIspravnost" onKeyPressed="#datumIspravnost" onKeyReleased="#datumIspravnost" onKeyTyped="#datumIspravnost" promptText="dan-mjesec-godina" />
-                <ComboBox fx:id="mjestoRodenja" editable="true" layoutX="183.0" layoutY="132.0" prefWidth="150.0" promptText="Mjesto rođenja" />
-            </children></AnchorPane>
-        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
-            <children>
-                <Label layoutX="44.0" layoutY="14.0" text="Kontakt podaci">
-                    <font>
-                        <Font name="System Bold" size="18.0" />
-                    </font>
-                </Label>
-                <Label layoutX="44.0" layoutY="49.0" text="Kontakt adresa">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label layoutX="44.0" layoutY="88.0" text="Kontakt telefon">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label layoutX="44.0" layoutY="127.0" text="Email adresa">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <TextField fx:id="adresaTextfield" layoutX="186.0" layoutY="49.0" promptText="Kontakt adresa" />
-                <TextField fx:id="telTextfield" layoutX="186.0" layoutY="88.0" promptText="Kontakt telefon" />
-                <TextField fx:id="emailTextfield" layoutX="186.0" layoutY="127.0" promptText="e-mail adresa" />
-            </children></AnchorPane>
-        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
-            <children>
-                <Label layoutX="43.0" layoutY="14.0" text="Podaci o studiju">
-                    <font>
-                        <Font name="System Bold" size="18.0" />
-                    </font>
-                </Label>
-                <Label layoutX="43.0" layoutY="41.0" text="Odsjek">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label layoutX="43.0" layoutY="75.0" text="Godina studija">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label layoutX="43.0" layoutY="111.0" text="Ciklus studija">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label layoutX="43.0" layoutY="147.0" text="Način finansiranja">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <Label layoutX="43.0" layoutY="184.0" text="Boračke kategorije">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Label>
-                <ComboBox fx:id="odsjek" layoutX="188.0" layoutY="41.0" prefWidth="150.0" promptText="Odsjek" />
-                <ComboBox fx:id="godStudija" layoutX="188.0" layoutY="75.0" prefWidth="150.0" promptText="Godina studija" />
-                <ComboBox fx:id="ciklStudija" layoutX="188.0" layoutY="111.0" prefWidth="150.0" promptText="Ciklus studija" />
-                <ComboBox fx:id="finansiranje" layoutX="188.0" layoutY="147.0" prefWidth="150.0" promptText="Redovan/Samofinansirajući" />
-                <ComboBox fx:id="boracke" layoutX="188.0" layoutY="184.0" prefWidth="150.0" />
-            </children></AnchorPane>
-        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
-            <children>
-                <Button fx:id="prijava" mnemonicParsing="false" onAction="#prijavi" prefWidth="200.0" text="Prijavi" />
+                        <TextField fx:id="jmbgTextfield" layoutX="183.0" layoutY="87.0" onKeyTyped="#jmbgIspravnost" promptText="JMBG" />
+                        <DatePicker fx:id="datum" layoutX="183.0" layoutY="47.0" onInputMethodTextChanged="#datumIspravnost" onKeyPressed="#datumIspravnost" onKeyReleased="#datumIspravnost" onKeyTyped="#datumIspravnost" promptText="mjesec/dan/godina" />
+                        <ComboBox fx:id="mjestoRodenja" editable="true" layoutX="183.0" layoutY="132.0" prefWidth="150.0" promptText="Mjesto rođenja" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                    <children>
+                        <Label layoutX="44.0" layoutY="14.0" text="Kontakt podaci">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="44.0" layoutY="49.0" text="Kontakt adresa">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="44.0" layoutY="88.0" text="Kontakt telefon">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="44.0" layoutY="127.0" text="Email adresa">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="adresaTextfield" layoutX="186.0" layoutY="49.0" promptText="Kontakt adresa">
+                            <tooltip>
+                                <Tooltip text="asdasdasd" />
+                            </tooltip></TextField>
+                        <TextField fx:id="telTextfield" layoutX="186.0" layoutY="88.0" onKeyReleased="#telefonIspravnost" onKeyTyped="#telefonIspravnost" promptText="Kontakt telefon" />
+                        <TextField fx:id="emailTextfield" layoutX="186.0" layoutY="127.0" onKeyReleased="#emailIspravnost" onKeyTyped="#emailIspravnost" promptText="E-mail adresa" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+                    <children>
+                        <Label layoutX="43.0" layoutY="14.0" text="Podaci o studiju" AnchorPane.bottomAnchor="213.0">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="43.0" layoutY="41.0" text="Odsjek">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="43.0" layoutY="75.0" text="Godina studija">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="43.0" layoutY="111.0" text="Ciklus studija">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="43.0" layoutY="147.0" text="Način finansiranja">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="43.0" layoutY="184.0" text="Boračke kategorije">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="odsjek" layoutX="188.0" layoutY="41.0" onAction="#odsjekIspravnost" onMouseClicked="#odsjekIspravnost" onMouseReleased="#odsjekIspravnost" prefWidth="150.0" promptText="Odsjek" />
+                        <ComboBox fx:id="godStudija" layoutX="188.0" layoutY="75.0" onAction="#godStudijaIspravnost" onMouseClicked="#godStudijaIspravnost" prefWidth="150.0" promptText="Godina studija" />
+                        <ComboBox fx:id="ciklStudija" layoutX="188.0" layoutY="111.0" onAction="#ciklStudijaIspravnost" onMouseClicked="#ciklStudijaIspravnost" prefWidth="150.0" promptText="Ciklus studija" />
+                        <ComboBox fx:id="finansiranje" layoutX="188.0" layoutY="147.0" onAction="#finansiranjeIspravnost" onMouseClicked="#finansiranjeIspravnost" prefWidth="150.0" promptText="Redovan/Samofinansirajući" />
+                        <ComboBox fx:id="boracke" layoutX="188.0" layoutY="184.0" onAction="#borackeIspravnost" onMouseClicked="#borackeIspravnost" prefWidth="150.0" />
+                    </children>
+                </AnchorPane>
+                <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
+                    <children>
+                        <Button fx:id="prijava" mnemonicParsing="false" onAction="#prijavi" prefWidth="200.0" text="Prijavi" />
+                    </children>
+                </StackPane>
             </children>
-        </StackPane>
-    </children>
-</GridPane>
+        </GridPane>
+    </content>
+</ScrollPane>
