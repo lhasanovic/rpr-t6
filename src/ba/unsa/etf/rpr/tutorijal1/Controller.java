@@ -21,6 +21,62 @@ import javafx.collections.ObservableList;
 public class Controller implements Initializable {
     private static boolean ispravnost = false;
 
+    public TextField getImeTextfield() {
+        return imeTextfield;
+    }
+
+    public void setImeTextfield(TextField imeTextfield) {
+        this.imeTextfield = imeTextfield;
+    }
+
+    public TextField getPrezimeTextfield() {
+        return prezimeTextfield;
+    }
+
+    public void setPrezimeTextfield(TextField prezimeTextfield) {
+        this.prezimeTextfield = prezimeTextfield;
+    }
+
+    public TextField getIndeksTextfield() {
+        return indeksTextfield;
+    }
+
+    public void setIndeksTextfield(TextField indeksTextfield) {
+        this.indeksTextfield = indeksTextfield;
+    }
+
+    public TextField getJmbgTextfield() {
+        return jmbgTextfield;
+    }
+
+    public void setJmbgTextfield(TextField jmbgTextfield) {
+        this.jmbgTextfield = jmbgTextfield;
+    }
+
+    public DatePicker getDatum() {
+        return datum;
+    }
+
+    public void setDatum(DatePicker datum) {
+        this.datum = datum;
+    }
+
+    public TextField getTelTextfield() {
+        return telTextfield;
+    }
+
+    public void setTelTextfield(TextField telTextfield) {
+        this.telTextfield = telTextfield;
+    }
+
+    public TextField getEmailTextfield() {
+        return emailTextfield;
+    }
+
+    public void setEmailTextfield(TextField emailTextfield) {
+        this.emailTextfield = emailTextfield;
+    }
+
     @FXML
     public TextField imeTextfield;
 
